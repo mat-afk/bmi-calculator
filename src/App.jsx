@@ -1,10 +1,11 @@
 import "./App.css";
+import BMICalculator from "./components/BMICalculator";
 
 function App() {
   return (
-    <>
-      <h1>Hello, world</h1>
-    </>
+    <div className="container">
+      <BMICalculator />
+    </div>
   );
 }
 
