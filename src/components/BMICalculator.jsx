@@ -1,9 +1,11 @@
+import Button from "./Button";
+
 import "./BMICalculator.css";
 
 const BMICalculator = () => {
   return (
     <div id="calculation-container">
-      <h2>BMI calculator</h2>
+      <h2>BMI Calculator</h2>
       <form id="bmi-form">
         <div className="form-inputs">
           <div className="form-control">
@@ -26,8 +28,8 @@ const BMICalculator = () => {
           </div>
         </div>
         <div className="action-control">
-            <button>Calculate</button>
-            <button>Reset</button>
+          <Button id="calculate-btn" text="Calculate" />
+          <Button id="reset-btn" text="Reset" />
         </div>
       </form>
     </div>
