@@ -14,6 +14,15 @@ const BMICalculator = () => {
     setWeight("");
   };
 
+  const replaceInvalidDigits = (input) => {
+    return input.replace(/[^0-9.,]/g, "");
+  };
+
+  const handleInputChange = (e, setter) => {
+    const validInput = replaceInvalidDigits(e.target.value);
+    setter(validInput);
+  };
+
   return (
     <div id="calculation-container">
       <h2>BMI Calculator</h2>
@@ -26,7 +35,7 @@ const BMICalculator = () => {
               id="height"
               name="height"
               placeholder="e.g. 1.75"
-              onChange={(e) => setHeight(e.target.value)}
+              onChange={(e) => handleInputChange(e, setHeight)}
               value={height}
             />
           </div>
@@ -37,7 +46,7 @@ const BMICalculator = () => {
               id="weight"
               name="weight"
               placeholder="e.g. 70.5"
-              onChange={(e) => setWeight(e.target.value)}
+              onChange={(e) => handleInputChange(e, setWeight)}
               value={weight}
             />
           </div>
