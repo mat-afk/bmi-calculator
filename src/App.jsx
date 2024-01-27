@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="container">
-      {!bmi ? <BMICalculator calculateBMI={calculateBMI} /> : <BMIResults />}
+      {!bmi ? <BMICalculator calculateBMI={calculateBMI} /> : <BMIResults data={data} />}
     </div>
   );
 }
