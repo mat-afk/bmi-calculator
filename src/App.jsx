@@ -11,18 +11,20 @@ function App() {
   const [classification, setClassification] = useState("");
   const [classificationClass, setClassificationClass] = useState("");
 
-  const calculateBMI = (e) => {
+  const calculateBMI = (e, height, weight) => {
     e.preventDefault();
-    console.log("calculateBMI");
+
+    if (!height || !weight) return;
+
+    const heightValue = height.replace(",", ".");
+    const weightValue = weight.replace(",", ".");
+
+    setBmi((weightValue / (heightValue * heightValue)).toFixed(1));
   };
 
   return (
     <div className="container">
-      {!bmi ? (
-        <BMICalculator calculateFunction={calculateBMI} />
-      ) : (
-        <BMIResults />
-      )}
+      {!bmi ? <BMICalculator calculateBMI={calculateBMI} /> : <BMIResults />}
     </div>
   );
 }
