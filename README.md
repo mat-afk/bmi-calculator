@@ -15,8 +15,8 @@ BMI (Body Mass Index) calculator made with React and Vite. After the user enters
 
 4. Enter your weight and height and click on the button to calculate your BMI.
 
-![Alt text](public/image-1.png)
+![BMI Calculator](public/image-1.png)
 
 5. View your results.
 
-![Alt text](public/image-2.png)
+![BMI Results](public/image-2.png)
