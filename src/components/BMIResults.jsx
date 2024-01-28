@@ -1,18 +1,19 @@
 import "./BMIResults.css";
 import Button from "./Button";
 
-const BMIResults = ({ data }) => {
+const BMIResults = ({ data, bmi, classification, classificationClass }) => {
   return (
     <div id="results-container">
       <p id="bmi-number">
-        Your BMI: <span></span>
+        Your BMI: <span className={classificationClass}>{bmi}</span>
       </p>
       <p id="bmi-classification">
-        Current situation: <span></span>
+        Current situation:{" "}
+        <span className={classificationClass}>{classification}</span>
       </p>
       <h3>Check out the table:</h3>
       <div id="bmi-table">
-        <div className="table-header">
+        <div id="table-header">
           <h4>BMI</h4>
           <h4>Classification</h4>
           <h4>Obesity</h4>
@@ -25,7 +26,7 @@ const BMIResults = ({ data }) => {
           </div>
         ))}
       </div>
-      <Button id="back-btn" text="Back" action={handleBackAction} />
+      <Button id="back-btn" text="Back" />
     </div>
   );
 };

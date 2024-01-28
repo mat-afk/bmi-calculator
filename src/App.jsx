@@ -19,12 +19,30 @@ function App() {
     const heightValue = height.replace(",", ".");
     const weightValue = weight.replace(",", ".");
 
-    setBmi((weightValue / (heightValue * heightValue)).toFixed(1));
+    const bmiResult = (weightValue / (heightValue * heightValue)).toFixed(1);
+
+    data.forEach((item) => {
+      if (bmiResult >= item.min && bmiResult <= item.max) {
+        setClassification(item.classification);
+        setClassificationClass(item.classificationClass);
+      }
+    });
+
+    setBmi(bmiResult);
   };
 
   return (
     <div className="container">
-      {!bmi ? <BMICalculator calculateBMI={calculateBMI} /> : <BMIResults data={data} />}
+      {!bmi ? (
+        <BMICalculator calculateBMI={calculateBMI} />
+      ) : (
+        <BMIResults
+          data={data}
+          bmi={bmi}
+          classification={classification}
+          classificationClass={classificationClass}
+        />
+      )}
     </div>
   );
 }
