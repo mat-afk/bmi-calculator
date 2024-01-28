@@ -1,7 +1,7 @@
 import "./BMIResults.css";
 import Button from "./Button";
 
-const BMIResults = ({ data, bmi, classification, classificationClass }) => {
+const BMIResults = ({ data, bmi, classification, classificationClass, backToCalculator }) => {
   return (
     <div id="results-container">
       <p id="bmi-number">
@@ -26,7 +26,7 @@ const BMIResults = ({ data, bmi, classification, classificationClass }) => {
           </div>
         ))}
       </div>
-      <Button id="back-btn" text="Back" />
+      <Button id="back-btn" text="Back" action={backToCalculator} />
     </div>
   );
 };

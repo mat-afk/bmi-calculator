@@ -31,6 +31,14 @@ function App() {
     setBmi(bmiResult);
   };
 
+  const backToCalculator = (e) => {
+    e.preventDefault();
+
+    setBmi("");
+    setClassification("");
+    setClassificationClass("");
+  };
+
   return (
     <div className="container">
       {!bmi ? (
@@ -41,6 +49,7 @@ function App() {
           bmi={bmi}
           classification={classification}
           classificationClass={classificationClass}
+          backToCalculator={backToCalculator}
         />
       )}
     </div>
